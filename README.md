@@ -42,7 +42,10 @@ To run Lasso-DNA, clone [LassoBench](https://github.com/ksehic/LassoBench) and a
 ```benchmark=lasso_dna```
 
 #### MOPTA & SVM
-To run MOPTA and SVM, clone [BenchSuite](https://github.com/hvarfner/vanillabobench) and add it to PYTHONPATH. Run either benchmark as
+To run MOPTA and SVM, add [BenchSuite](https://arxiv.org/abs/2304.11468) (modified version included in the repo) to PYTHONPATH:
+```export PYTHONPATH=${PYTHONPATH}:$PWD/BenchSuite```
+
+ Run either benchmark as
 ```benchmark=lasso_dna``` or ```benchmark=svm```.
 
 #### MuJoCo Ant & Humanoid
@@ -51,3 +54,6 @@ Build the ```recipes/mujoco_container``` with Singularity, and add the container
 
 Then, run either benchmark as:
 ```benchmark=ant``` or ```benchmark=humanoid```
+
+
+

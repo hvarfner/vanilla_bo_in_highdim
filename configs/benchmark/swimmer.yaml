@@ -1,0 +1,7 @@
+name: swimmer
+benchmark: swimmer
+num_iters: 1000
+num_init: 30
+parameters: null
+bounds: [[-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1]] 
+noise_std: 0.0

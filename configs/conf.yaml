@@ -1,0 +1,15 @@
+
+seed: 42
+defaults:
+  - model: default
+  - acq_opt: highdim
+  - acq: qlognei
+  - benchmark: levy4_25
+
+q: 1
+init: sqrt
+init_factor: 3
+experiment_group: test
+experiment_name: ${benchmark.name}_${acq.name}_run${seed}
+result_path: results/${experiment_group}/${benchmark.name}/${acq.name}
+include_in_path: ""

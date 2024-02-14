@@ -1,0 +1,13 @@
+model_name: default
+gp: SingleTaskGP
+gp_params: 
+  # These are used, except for the outputscale which is simply 1
+    const: 
+      loc: 0
+      scale: 1
+    ls:
+      loc: 1.4
+      scale: 1.73205
+    noise:
+      loc: -4
+      scale: 1

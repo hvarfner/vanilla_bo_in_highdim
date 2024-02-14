@@ -1,0 +1,13 @@
+model_name: with_ops
+gp: SingleTaskGP
+gp_params: 
+  # These are all used, except for the outputscale which is the botorch default
+  ops: 
+    loc: 0
+    scale: 1
+  ls:
+    loc: 1.4
+    scale: 1.73205
+  noise:
+    loc: -4
+    scale: 1

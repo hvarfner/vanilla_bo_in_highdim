@@ -1,0 +1,9 @@
+raw_samples: 512
+num_restarts: 4
+retry_on_optimization_warning: False
+options:
+  nonnegative: false
+  sample_around_best: true 
+  sample_around_best_sigma: 0.1  
+  maxiter: 300
+  batch_limit: 64

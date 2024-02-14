@@ -1,0 +1,13 @@
+model_name: gamma_3_6
+gp: SingleTaskGP
+gp_params:
+  # These are all unused, since they are not passed into the model
+  const: 
+    loc: 0
+    scale: 1
+  ls:
+    loc: 0
+    scale: 1
+  noise:
+    loc: 0 
+    scale: 1

@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "benchsuite"
+version = "0.1.0"
+description = ""
+authors = ["Leonard Papenmeier <leonard.papenmeier@posteo.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+ebo = { git = "https://github.com/LeoIV/Ensemble-Bayesian-Optimization.git" }
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

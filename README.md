@@ -2,7 +2,7 @@
 
 To run any experiment in the paper:
 
-pip install ```ax-platform hydra-core```
+```pip install ax-platform hydra-core```
 
 Then, any of the synthetic benchmarks are runnable.
 

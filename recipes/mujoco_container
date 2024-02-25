@@ -1,0 +1,48 @@
+Bootstrap: docker
+From: python:3.10-slim
+Stage: build
+
+
+%environment
+    export LANG=C.UTF-8
+    export LD_LIBRARY_PATH=/opt/mujoco210/bin:${LD_LIBRARY_PATH}
+    export LD_LIBRARY_PATH=/usr/local/nvidia/lib64:${LD_LIBRARY_PATH}
+    export MUJOCO_PY_MUJOCO_PATH=/opt/mujoco210
+    export BD_PATH=/opt/BenchSuite
+
+%post
+    export LD_LIBRARY_PATH=/opt/mujoco210/bin:${LD_LIBRARY_PATH}
+    apt update -y
+    apt install build-essential git wget -y    
+    apt install swig libglew-dev patchelf -y
+    apt-get install libosmesa6-dev libgl1-mesa-glx -y
+
+    mkdir /tmp/mujocopy-buildlock || true
+    chmod 777 /tmp/mujocopy-buildlock
+
+    cd /opt
+    git clone https://github.com/seventeendollarcoffee/BenchSuite.git
+    
+    cd /opt
+    wget https://github.com/google-deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz
+    tar -xf mujoco210-linux-x86_64.tar.gz
+    rm mujoco210-linux-x86_64.tar.gz
+
+    export MUJOCO_PY_MUJOCO_PATH=/opt/mujoco210
+
+
+
+    cd /opt
+    git clone https://github.com/seventeendollarcoffee/mujoco-py.git
+    cd mujoco-py
+    pip install --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir -r requirements.dev.txt
+    python setup.py build install
+    cd ..
+
+    pip install gym==0.23.1
+    pip install torch==2.1.0
+
+%runscript
+    python ${BD_PATH}/main.py --name mujoco $*
+

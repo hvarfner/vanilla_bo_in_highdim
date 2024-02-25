@@ -52,8 +52,9 @@ Build the ```recipes/mujoco_container``` with Singularity, and add the container
 
 ```
 sudo singularity build containers/mujoco recipes/mujoco_container
-export MUJOCO=containers/mujoco     
-```.
+export MUJOCO=${PWD}/containers/mujoco     
+```
+
 
 Then, run either benchmark as:
 ```benchmark=ant``` or ```benchmark=humanoid```

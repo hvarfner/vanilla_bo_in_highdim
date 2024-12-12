@@ -1,5 +1,21 @@
 ##### NOTE: As of [BoTorch 0.12.0](https://github.com/pytorch/botorch/releases/tag/v0.12.0), the dimension-scaled prior is the default. As such, the priors used in the paper can be used by running a standard BoTorch SingleTaskGP, with no additional changes to either the `covar_module` or the `likelihood`. See [this post](https://github.com/pytorch/botorch/discussions/2451) for more information. So, if you simply want to run the priors from the paper for your high-dimensional problems, you can just use BoTorch as usual. Just don't forget to cite the paper if you do. =)
 
+```
+@InProceedings{pmlr-v235-hvarfner24a,
+  title = 	 {Vanilla {B}ayesian Optimization Performs Great in High Dimensions},
+  author =       {Hvarfner, Carl and Hellsten, Erik Orm and Nardi, Luigi},
+  booktitle = 	 {Proceedings of the 41st International Conference on Machine Learning},
+  pages = 	 {20793--20817},
+  year = 	 {2024},
+  editor = 	 {Salakhutdinov, Ruslan and Kolter, Zico and Heller, Katherine and Weller, Adrian and Oliver, Nuria and Scarlett, Jonathan and Berkenkamp, Felix},
+  volume = 	 {235},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {21--27 Jul},
+  publisher =    {PMLR},
+  url = 	 {https://proceedings.mlr.press/v235/hvarfner24a.html},
+}
+```
+
 # Official repository for "Vanilla Bayesian Optimization Performs Great in High Dimensions"
 
 

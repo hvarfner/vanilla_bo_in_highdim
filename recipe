@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: nvidia/cuda:12.8.0-base-ubuntu22.04
+
+%environment
+    # Set up the environment for CUDA
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export CUDA_HOME=/usr/local/cuda
+    export PYTHONPATH=${PYTHONPATH}:${PWD}/BenchSuite
+
+%files
+    benchmarking/
+    BenchSuite/
+    configs/
+
+%post
+    # Install system dependencies and Python packages
+    apt-get update && apt-get install -y \
+        python3-pip \
+        python3-dev \
+        curl \
+        build-essential
+
+    # Install additional Python packages
+    pip install ax-platform
+    pip install hydra-core
+
+%runscript
+    # The script that will be executed when the container is run
+    python3 main.py $*

@@ -1,0 +1,59 @@
+outputs/
+results/
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+MANIFEST
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+venv.bak/
+venv3/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Python-specific IDE configurations
+*.iml
+
+# Test and coverage reports
+nosetests.xml
+coverage.xml
+*.cover
+*.tox/
+*.nox/
+*.coverage
+*.hypothesis/
+
+# Pytest cache
+.cache/
+
+# Local configuration
+*.env
+*.venv
+
+# Logs
+*.log
+
+# Mac OS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db

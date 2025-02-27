@@ -6,9 +6,7 @@ from torch import Tensor
 
 from gpytorch.priors.torch_priors import GammaPrior
 from botorch.models import (
-    FixedNoiseGP,
     SingleTaskGP,
-    SingleTaskVariationalGP,
 )
 from gpytorch.means import (
     ConstantMean,
@@ -28,7 +26,6 @@ from gpytorch.constraints.constraints import GreaterThan
 from gpytorch.likelihoods import GaussianLikelihood
 
 MODELS = {
-    'FixedNoiseGP': FixedNoiseGP,
     'SingleTaskGP': SingleTaskGP,
 }
 DIM_SCALING = {

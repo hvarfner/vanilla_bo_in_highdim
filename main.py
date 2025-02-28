@@ -35,6 +35,7 @@ from time import time
 
 @hydra.main(config_path='./configs', config_name='conf')
 def main(cfg: DictConfig) -> None:
+
     torch.manual_seed(int(cfg.seed))
     np.random.seed(int(cfg.seed))
     q = cfg.q
@@ -95,6 +96,7 @@ def main(cfg: DictConfig) -> None:
         model=model_enum,
         num_trials=num_bo,
         model_kwargs={  # Kwargs to pass to `BoTorchModel.__init__`
+            "torch_device": torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu"),
             "surrogate": Surrogate(
                 botorch_model_class=model,
                 covar_module_class=model_kwargs["covar_module_class"],

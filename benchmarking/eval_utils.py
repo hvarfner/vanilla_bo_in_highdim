@@ -7,7 +7,7 @@ def get_model_hyperparameters(model, current_data, scale_hyperparameters=True):
     has_outputscale = isinstance(model.covar_module, ScaleKernel)
     has_mean = isinstance(model.mean_module, ConstantMean)
 
-    def tolist(l): return l.detach().to(torch.float32).numpy().tolist()
+    def tolist(l): return l.detach().to(torch.float32).cpu().numpy().tolist()
     hp_dict = {}
     data_mean = current_data.mean()
 

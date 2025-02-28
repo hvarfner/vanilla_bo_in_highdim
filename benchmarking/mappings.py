@@ -9,6 +9,7 @@ from benchmarking.synthetic import (
 )
 from botorch.acquisition import (
     qNoisyExpectedImprovement,
+    qUpperConfidenceBound,
 )
 from botorch.acquisition.logei import qLogNoisyExpectedImprovement
 
@@ -56,6 +57,7 @@ def get_test_function(name: str, noise_std: float, seed: int = 0,bounds=None):
 
 ACQUISITION_FUNCTIONS = {
     'NEI': qNoisyExpectedImprovement,
+    'UCB': qUpperConfidenceBound,
     'qLogNEI': qLogNoisyExpectedImprovement,
 }
 

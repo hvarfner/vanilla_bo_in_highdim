@@ -51,6 +51,8 @@ def construct_script(args, cluster_oe_dir):
     script.append(f"#SBATCH --job-name {args.job_name}")
     script.append(f"#SBATCH --gpus-per-node {args.gpus}")
     script.append(f"#SBATCH --time {args.time}")
+    script.append(f"#SBATCH --output=logs/%j.log")          # Output file (with job id)
+    script.append(f"#SBATCH --error=logs/%j.log")            # Error file (with job id)
 
     script.append("")
     script.append(argument_string)
